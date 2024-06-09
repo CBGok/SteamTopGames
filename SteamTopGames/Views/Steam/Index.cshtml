@@ -1,0 +1,25 @@
+﻿@model List<SteamTopGames.Models.SteamGame>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Steam Games</title>
+</head>
+<body>
+    <h1>Top 10 Most Played Steam Games</h1>
+    <ul>
+        @foreach (var game in Model)
+        {
+            <li>
+                <h2>@game.Name</h2>
+                <p>Current Players: @game.CurrentPlayers</p>
+                <p>@game.Description</p>
+                <img src="@game.HeaderImage" alt="@game.Name" width="200">
+            </li>
+        }
+    </ul>
+</body>
+</html>
