@@ -11,6 +11,7 @@ html, body {
     width: 100%;
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(4,29,77,1) 33%, rgba(3,97,116,1) 100%);
     overflow-x: hidden; /* Yatay kaydırma çubuğunu engeller */
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 
@@ -22,7 +23,44 @@ html, body {
     flex-grow: 1;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
+.fun-title {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 2rem;
+    color: #61dafb;
+    text-align: center;
+    margin: 20px 0;
+    margin-bottom: 30px; /* Alt kenar boşluğunu ekledik */
+    animation: fadeIn 2s ease-in-out; /* Fun title animasyonu eklendi */
+}
+
+.glow-effect {
+    text-shadow: 0 0 5px #61dafb, 0 0 10px #61dafb, 0 0 15px #61dafb, 0 0 20px #61dafb;
+    animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #61dafb, 0 0 20px #61dafb, 0 0 30px #61dafb, 0 0 40px #61dafb;
+    }
+
+    to {
+        text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff, 0 0 40px #ffffff;
+    }
+}
 
 .App {
     display: flex;
@@ -43,30 +81,50 @@ html, body {
     position: fixed;
     top: 0;
     left: 0;
-    height: 100vh; /* Tüm sayfa yüksekliğini kaplamasını sağladık */
+    height: 100vh;
     width: 250px;
-    background-color: #282c34;
+    background: linear-gradient(180deg, rgba(40,44,52,0.4) 0%, rgba(61,90,128,0.6) 100%);
     padding-top: 20px;
     color: white;
-    z-index: 1000; /* Sidebar'ın üstte görünmesini sağlayacak */
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    font-family: 'Press Start 2P', cursive;
 }
 
     .sidebar h2 {
         text-align: center;
         margin-bottom: 30px;
+        color: #61dafb;
     }
 
     .sidebar .nav-link {
-        border-radius:3px;
+        border: 1px solid #61dafb;
+        border-radius: 5px;
         color: #61dafb;
         padding: 15px 20px;
         text-align: left;
+        margin: 10px 10px;
+        display: flex;
+        align-items: center;
+        transition: background-color 0.3s, transform 0.3s, text-shadow 0.3s;
+        font-size:small;
     }
 
+        .sidebar .nav-link i {
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+
         .sidebar .nav-link:hover {
-            border-radius: 3px;
             background-color: #1e1e1e;
-            color: white;
+            color: #61dafb;
+            text-shadow: 0 0 5px #61dafb, 0 0 10px #61dafb, 0 0 15px #61dafb, 0 0 20px #61dafb, 0 0 25px #61dafb, 0 0 30px #61dafb, 0 0 35px #61dafb;
+            transform: scale(1.05);
+        }
+
+        .sidebar .nav-link:not(:last-child) {
+            margin-bottom: 15px; /* Linkleri ayırmak için */
         }
 
 .content {
@@ -101,7 +159,7 @@ html, body {
 
 .card {
     position: relative;
-    background: rgba(40, 44, 52, 0.8); /* Şeffaf bir arka plan rengi */
+    background: rgba(40, 44, 52, 0.5); /* Şeffaf bir arka plan rengi */
     border: none;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -113,6 +171,7 @@ html, body {
     .card:hover {
         transform: scale(1.05);
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
     }
 
 .container {
@@ -121,6 +180,7 @@ html, body {
 }
 
 .card-title {
+    text-align:center;
     font-size: 1.5rem;
     font-weight: 700;
     color: #61dafb;

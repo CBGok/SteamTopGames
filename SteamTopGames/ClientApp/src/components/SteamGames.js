@@ -30,7 +30,7 @@ const SteamGames = () => {
 
     return (
         <Container>
-            <h1 className="text-center mt-4 mb-5 text-light">Top 10 Most Played Steam Games</h1>
+            <h1 class="fun-title">Top 10 Most Played Steam Games</h1>
             <Row>
                 {games.map((game, index) => (
                     <Col key={game.appId} md={4} className="mb-4">

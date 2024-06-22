@@ -5,6 +5,8 @@ import Sidebar from './components/Sidebar';
 import LandingPage from './components/LandingPage';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import './App.css';
+import TopSongs from './components/TopSongs';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 function App() {
     const [showBar, setShowBar] = useState(false);
@@ -22,6 +24,7 @@ function App() {
                     <Routes>
                         <Route path="/" element={<LandingPage />} />
                         <Route path="/steam-games" element={<SteamGames />} />
+                        <Route path="/top-songs" element={<TopSongs />} />
                         <Route path="*" element={<Navigate to="/" />} />
                     </Routes>
                 </div>
