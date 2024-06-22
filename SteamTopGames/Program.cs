@@ -9,7 +9,7 @@ builder.Services.AddCors(options =>
     options.AddDefaultPolicy(
         builder =>
         {
-            builder.WithOrigins("http://localhost:3001") // React uygulamanýzýn çalýþtýðý URL
+            builder.WithOrigins("http://localhost:3000") // React uygulamanýzýn çalýþtýðý URL
                    .AllowAnyHeader()
                    .AllowAnyMethod();
         });

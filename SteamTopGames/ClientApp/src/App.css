@@ -10,17 +10,33 @@ html, body {
     height: 100%;
     width: 100%;
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(4,29,77,1) 33%, rgba(3,97,116,1) 100%);
+    overflow-x: hidden; /* Yatay kaydırma çubuğunu engeller */
 }
 
-.landing-page {
+
+
+.landing-page h1, p {
+    color:azure;
     text-align: center;
-    padding: 50px;
+    padding: 30px;
     flex-grow: 1;
 }
+
+
 
 .App {
     display: flex;
     min-height: 100vh; /* Tüm sayfa yüksekliğini kaplamasını sağladık */
+    position: relative; /* Position relative for proper positioning of elements */
+}
+
+.hamburger-menu {
+    color:whitesmoke;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1100;
+    cursor: pointer;
 }
 
 .sidebar {
@@ -32,6 +48,7 @@ html, body {
     background-color: #282c34;
     padding-top: 20px;
     color: white;
+    z-index: 1000; /* Sidebar'ın üstte görünmesini sağlayacak */
 }
 
     .sidebar h2 {
@@ -40,21 +57,27 @@ html, body {
     }
 
     .sidebar .nav-link {
+        border-radius:3px;
         color: #61dafb;
         padding: 15px 20px;
         text-align: left;
     }
 
         .sidebar .nav-link:hover {
+            border-radius: 3px;
             background-color: #1e1e1e;
             color: white;
         }
 
 .content {
-    margin-left: 250px; /* Sidebar'ın genişliği kadar boşluk bırak */
+    transition: margin-left 0.3s;
     padding: 20px;
     flex-grow: 1; /* İçeriğin geri kalan alanı kaplamasını sağlar */
 }
+
+    .content.shifted {
+        margin-left: 250px; /* Sidebar'ın genişliği kadar boşluk bırak */
+    }
 
 .App-logo {
     height: 40vmin;

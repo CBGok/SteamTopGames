@@ -6,6 +6,7 @@ import '../App.css';
 const Sidebar = () => {
     return (
         <div className="sidebar">
+        <h2></h2>
             <h2>Steam Games Info</h2>
             <Nav className="flex-column">
                 <Nav.Link as={Link} to="/">Home</Nav.Link>

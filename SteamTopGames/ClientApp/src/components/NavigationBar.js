@@ -1,12 +1,15 @@
 ﻿import React from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { GiHamburgerMenu } from 'react-icons/gi';
+import '../App.css'; // CSS dosyanızın yolu doğru olduğundan emin olun
 
 const NavigationBar = () => {
     return (
-        <Navbar bg="dark" variant="dark" expand="lg">
-            <Navbar.Brand as={Link} to="/">Steam Games Info</Navbar.Brand>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar expand="lg" className="navbar-custom">
+            <Navbar aria-controls="basic-navbar-nav">
+                <GiHamburgerMenu />
+            </Navbar>
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="ml-auto">
                     <Nav.Link as={Link} to="/">Home</Nav.Link>
